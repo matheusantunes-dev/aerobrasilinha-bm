@@ -20,16 +20,15 @@ const imagesDir = join(__dirname, '..', 'public', 'images', 'galeria')
 const files = readdirSync(imagesDir).filter(f => /\.(png|jpg|jpeg|webp)$/i.test(f))
 
 const captions = {
-  'foto-tirada.png': 'Registro do campo',
-  'foto-tirada-pista.png': 'Nossa pista de voo',
+  'foto-tirada.png': 'Teste do Helimodelo',
   'fot-tirada-pista-atual.png': 'Pista atual em construção',
   'foto-tirada-rádio-flysky.png': 'Rádio FlySky em ação',
-  'foto-tirada-stick.png': 'Hora de pilotar',
-  'foto-tirada-telemaster.png': 'Telemaster Amarelo',
-  'foto-tirada-tucano.png': 'Tucano na pista',
-  'foto-tirada-tucano-no-chão.png': 'Tucano no chão',
-  'foto-tirada-tucano-voando.png': 'Tucano voando',
-  'foto-tirada-zagi.png': 'Zagi em voo',
+  'foto-tirada-stick.png': 'Saulo pilotando o Ugly Stick do Marcos',
+  'foto-tirada-telemaster.png': 'Telemaster do ex-piloto Matheus',
+  'foto-tirada-tucano.png': 'Pouso do T-27 do Ex-piloto Matheus - Januária MG',
+  'foto-tirada-tucano-no-chão.png': 'Tucano T-27 do ex-piloto Matheus',
+  'foto-tirada-tucano-voando.png': 'T-27 passando baixo',
+  'foto-tirada-zagi.png': 'Zagi do piloto Saulo',
 }
 
 function sanitizeFilename(name) {
