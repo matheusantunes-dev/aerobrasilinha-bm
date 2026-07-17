@@ -58,7 +58,7 @@ export function Localizacao() {
               Aeroporto Regional de Brasília de Minas - MG
             </p>
             <MapView
-              center={[-16.1967, -44.4595]}
+              center={[-16.2209, -44.3528]}
               zoom={14}
               label="Aeroporto Regional de Brasília de Minas"
               description="Voos também podem ser realizados aqui"
