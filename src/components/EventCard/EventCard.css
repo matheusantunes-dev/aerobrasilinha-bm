@@ -31,6 +31,13 @@
   padding-top: 16px;
 }
 
+.event-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .event-card-title {
   font-size: 1.2rem;
   font-weight: 700;
@@ -77,4 +84,67 @@
 
 .event-card-map-link:hover {
   color: var(--orange-300);
+}
+
+/* Status badge base */
+.event-status-badge {
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* É HOJE! — pulsar laranja */
+.event-card.badge-hoje {
+  border-color: var(--orange-500);
+  box-shadow: 0 0 20px var(--orange-glow);
+  animation: glowPulse 2s ease infinite;
+}
+
+.event-status-badge.badge-hoje {
+  background: var(--orange-500);
+  color: var(--white);
+}
+
+/* Véspera de Voo */
+.event-status-badge.badge-amanha {
+  background: rgba(255, 107, 0, 0.2);
+  color: var(--orange-400);
+}
+
+/* Em Breve */
+.event-status-badge.badge-semana {
+  background: rgba(68, 136, 255, 0.15);
+  color: #4488FF;
+}
+
+/* Passado */
+.event-card.event-expired {
+  opacity: 0.6;
+}
+
+.event-status-badge.badge-passado {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gray-400);
+}
+
+/* Próximo Voo */
+.event-status-badge.badge-futuro {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gray-200);
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.6);
+  }
 }

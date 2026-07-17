@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
 import { Hero } from '../../components/Hero/Hero'
-import { EventCard } from '../../components/EventCard/EventCard'
+import { EventCard, sortEvents, getEventStatus } from '../../components/EventCard/EventCard'
 import { useEvents } from '../../hooks/useEvents'
 import { LoadingGrid } from '../../components/Loading/Loading'
 import './Home.css'
 
 export function Home() {
   const { events, loading } = useEvents()
-  const upcoming = events.filter(e => new Date(e.date + 'T12:00:00') >= new Date()).slice(0, 3)
+  const hoje = sortEvents(events).filter(e => getEventStatus(e.date).className === 'badge-hoje').slice(0, 3)
+  const upcoming = sortEvents(events).filter(e => getEventStatus(e.date).className !== 'badge-hoje').slice(0, 3)
+  const preview = hoje.length > 0 ? hoje : upcoming
 
   return (
     <>
@@ -61,9 +63,9 @@ export function Home() {
 
           {loading ? (
             <LoadingGrid count={3} />
-          ) : upcoming.length > 0 ? (
+          ) : preview.length > 0 ? (
             <div className="events-preview-grid">
-              {upcoming.map(event => (
+              {preview.map(event => (
                 <EventCard key={event.id} event={event} />
               ))}
             </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../services/supabase'
 import type { Event } from '../types'
+import { isEventExpired } from '../components/EventCard/EventCard'
 
 export function useEvents() {
   const [events, setEvents] = useState<Event[]>([])
@@ -13,7 +14,7 @@ export function useEvents() {
       .order('date', { ascending: true })
 
     if (!error && data) {
-      setEvents(data)
+      setEvents(data.filter(e => !isEventExpired(e.date)))
     }
     setLoading(false)
   }
