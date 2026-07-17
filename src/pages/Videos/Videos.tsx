@@ -2,9 +2,11 @@ import { videos } from '../../data/videos'
 import { VideoCard } from '../../components/VideoCard/VideoCard'
 import './Videos.css'
 
+const pistaIds = ['pista-1', 'pista-2']
+
 export function Videos() {
-  const normalVideos = videos.filter(v => v.type === 'video')
-  const shortVideos = videos.filter(v => v.type === 'short')
+  const pistaVideos = videos.filter(v => pistaIds.includes(v.id))
+  const outrosVideos = videos.filter(v => !pistaIds.includes(v.id))
 
   return (
     <div className="videos-page section">
@@ -14,22 +16,22 @@ export function Videos() {
           Vídeos e shorts do nosso canal no YouTube
         </p>
 
-        {normalVideos.length > 0 && (
+        {pistaVideos.length > 0 && (
           <>
-            <h2 className="videos-subtitle">Vídeos da Pista</h2>
+            <h2 className="videos-subtitle">Voo na Pista</h2>
             <div className="videos-grid">
-              {normalVideos.map(video => (
+              {pistaVideos.map(video => (
                 <VideoCard key={video.id} video={video} />
               ))}
             </div>
           </>
         )}
 
-        {shortVideos.length > 0 && (
+        {outrosVideos.length > 0 && (
           <>
-            <h2 className="videos-subtitle">Shorts</h2>
-            <div className="videos-grid shorts-grid">
-              {shortVideos.map(video => (
+            <h2 className="videos-subtitle">Outros Vôos do Clube!</h2>
+            <div className="videos-grid">
+              {outrosVideos.map(video => (
                 <VideoCard key={video.id} video={video} />
               ))}
             </div>
