@@ -1,0 +1,118 @@
+.event-list-page {
+  padding-top: calc(var(--header-height) + 40px);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.event-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.list-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.list-empty {
+  text-align: center;
+  padding: 60px;
+  color: var(--gray-300);
+}
+
+.event-table {
+  border: 1px solid var(--black-500);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.event-table-header {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 100px;
+  padding: 14px 20px;
+  background: var(--black-700);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-300);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-table-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 100px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--black-600);
+  align-items: center;
+  font-size: 0.9rem;
+  transition: background var(--transition-fast);
+}
+
+.event-table-row:hover {
+  background: var(--black-700);
+}
+
+.event-table-title {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.event-table-date,
+.event-table-location {
+  color: var(--gray-300);
+}
+
+.event-table-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-action.edit {
+  background: rgba(255, 107, 0, 0.15);
+  color: var(--orange-400);
+}
+
+.btn-action.edit:hover {
+  background: rgba(255, 107, 0, 0.25);
+}
+
+.btn-action.delete {
+  background: rgba(255, 68, 68, 0.15);
+  color: var(--error);
+}
+
+.btn-action.delete:hover {
+  background: rgba(255, 68, 68, 0.25);
+}
+
+.btn-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .event-table-header,
+  .event-table-row {
+    grid-template-columns: 90px 1fr 60px;
+  }
+
+  .event-table-header span:nth-child(3),
+  .event-table-row .event-table-location {
+    display: none;
+  }
+}

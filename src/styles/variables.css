@@ -1,0 +1,41 @@
+:root {
+  /* Orange palette */
+  --orange-300: #FFA033;
+  --orange-400: #FF8500;
+  --orange-500: #FF6B00;
+  --orange-600: #E05E00;
+  --orange-glow: rgba(255, 107, 0, 0.25);
+  --orange-glow-soft: rgba(255, 107, 0, 0.12);
+
+  /* Dark palette */
+  --black-900: #050505;
+  --black-800: #0D0D0D;
+  --black-700: #1A1A1A;
+  --black-600: #222222;
+  --black-500: #2A2A2A;
+
+  /* Gray */
+  --gray-500: #555555;
+  --gray-400: #777777;
+  --gray-300: #999999;
+  --gray-200: #BBBBBB;
+  --gray-100: #DDDDDD;
+
+  /* Functional */
+  --white: #FFFFFF;
+  --error: #FF4444;
+  --success: #44BB66;
+
+  /* Typography */
+  --font-primary: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* Sizing */
+  --max-width: 1200px;
+  --header-height: 70px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}

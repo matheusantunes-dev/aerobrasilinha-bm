@@ -1,0 +1,23 @@
+.galeria-page {
+  padding-top: calc(var(--header-height) + 40px);
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.galeria-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray-300);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,123 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--black-600);
+  height: var(--header-height);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.header-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--orange-500);
+}
+
+.header-logo-text {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.header-logo-text:hover {
+  color: var(--orange-400);
+  transition: color var(--transition-fast);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  color: var(--gray-200);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.header-link:hover {
+  color: var(--white);
+  background: var(--black-600);
+}
+
+.header-link.active {
+  color: var(--orange-400);
+  background: rgba(255, 107, 0, 0.1);
+}
+
+.admin-link {
+  color: var(--orange-300);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+}
+
+.admin-link:hover {
+  border-color: var(--orange-500);
+}
+
+.header-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .header-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--black-900);
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    z-index: 999;
+  }
+
+  .header-nav.open {
+    transform: translateX(0);
+  }
+
+  .header-link {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1.05rem;
+  }
+}
