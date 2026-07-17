@@ -1,10 +1,15 @@
+import { useState } from 'react'
 import { useGallery } from '../../hooks/useGallery'
 import { PhotoCard } from '../../components/PhotoCard/PhotoCard'
+import { ImageModal } from '../../components/ImageModal/ImageModal'
 import { LoadingGrid } from '../../components/Loading/Loading'
 import './Galeria.css'
 
 export function Galeria() {
   const { items, loading } = useGallery()
+  const [modalIndex, setModalIndex] = useState<number | null>(null)
+
+  const images = items.map(item => ({ url: item.image_url, caption: item.caption }))
 
   return (
     <div className="galeria-page section">
@@ -18,8 +23,10 @@ export function Galeria() {
           <LoadingGrid count={6} />
         ) : items.length > 0 ? (
           <div className="galeria-grid">
-            {items.map(photo => (
-              <PhotoCard key={photo.id} photo={photo} />
+            {items.map((photo, idx) => (
+              <div key={photo.id} onClick={() => setModalIndex(idx)} style={{ cursor: 'pointer' }}>
+                <PhotoCard photo={photo} />
+              </div>
             ))}
           </div>
         ) : (
@@ -29,6 +36,15 @@ export function Galeria() {
           </div>
         )}
       </div>
+
+      {modalIndex !== null && (
+        <ImageModal
+          images={images}
+          currentIndex={modalIndex}
+          onClose={() => setModalIndex(null)}
+          onChange={setModalIndex}
+        />
+      )}
     </div>
   )
 }

@@ -35,7 +35,7 @@ export const videos: VideoItem[] = [
   },
   {
     id: 'div-3',
-    title: 'Aeromodelismo - Diversos',
+    title: 'Vôozinho da tarde',
     url: 'https://youtu.be/WrgZVGvMg_Y',
     type: 'video',
   },
@@ -47,7 +47,7 @@ export const videos: VideoItem[] = [
   },
   {
     id: 'div-5',
-    title: 'Registro de voo',
+    title: 'Saulo pilotando sua Zagi',
     url: 'https://www.youtube.com/watch?v=sebyACCi6iQ',
     type: 'video',
   },

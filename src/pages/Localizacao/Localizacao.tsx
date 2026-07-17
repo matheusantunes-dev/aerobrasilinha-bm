@@ -65,7 +65,7 @@ export function Localizacao() {
               icon="airport"
             />
             <a
-              href="https://www.google.com/maps/search/Aeroporto+Regional+de+Bras%C3%ADlia+de+Minas"
+              href="https://maps.app.goo.gl/3JyXSj6ZHdj7pr159"
               target="_blank"
               rel="noopener noreferrer"
               className="card-link"

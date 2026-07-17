@@ -1,0 +1,109 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 2001;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 2001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.modal-nav:hover:not(.disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-nav.disabled {
+  color: var(--gray-500);
+  cursor: default;
+}
+
+.modal-prev {
+  left: 20px;
+}
+
+.modal-next {
+  right: 20px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-image {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-caption {
+  font-size: 0.95rem;
+  color: var(--gray-200);
+  text-align: center;
+  max-width: 600px;
+}
+
+.modal-counter {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+}
+
+@media (max-width: 768px) {
+  .modal-nav {
+    padding: 8px;
+  }
+
+  .modal-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .modal-prev {
+    left: 8px;
+  }
+
+  .modal-next {
+    right: 8px;
+  }
+}

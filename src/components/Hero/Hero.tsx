@@ -17,7 +17,7 @@ export function Hero() {
           />
         </div>
         <h1 className="hero-title">AEROBRASILINHA</h1>
-        <p className="hero-subtitle">Aeromodelismo & Paixão pelos Céus</p>
+        <p className="hero-subtitle">Clube de Aeromodelismo em Brasília de Minas - MG</p>
         <p className="hero-description">
           Um clube recém-nascido com a missão de unir apaixonados por aeromodelismo.
           Voamos juntos!
