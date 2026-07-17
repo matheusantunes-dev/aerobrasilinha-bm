@@ -19,6 +19,55 @@
   border: none;
 }
 
+.video-card-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  background: var(--black-900);
+}
+
+.video-card-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.video-card:hover .video-card-thumb-img {
+  transform: scale(1.05);
+}
+
+.video-card-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  transition: background var(--transition-fast);
+}
+
+.video-card-play svg {
+  color: var(--white);
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: all var(--transition-fast);
+}
+
+.video-card-thumb:hover .video-card-play {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.video-card-thumb:hover .video-card-play svg {
+  color: var(--orange-400);
+  transform: scale(1.1);
+}
+
 .video-card-body {
   padding: 16px;
   display: flex;
