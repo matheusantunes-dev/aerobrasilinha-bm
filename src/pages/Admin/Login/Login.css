@@ -73,6 +73,22 @@
   color: var(--gray-500);
 }
 
+.login-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+  color: var(--gray-400);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.login-back:hover {
+  color: var(--orange-400);
+}
+
 .login-btn {
   width: 100%;
   justify-content: center;

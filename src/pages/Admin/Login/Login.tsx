@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
-import { Shield } from 'lucide-react'
+import { Shield, ArrowLeft } from 'lucide-react'
 import './Login.css'
 
 export function Login() {
@@ -66,6 +66,11 @@ export function Login() {
             {loading ? 'Entrando...' : 'Entrar'}
           </button>
         </form>
+
+        <Link to="/" className="login-back">
+          <ArrowLeft size={16} />
+          Voltar ao site
+        </Link>
       </div>
     </div>
   )
