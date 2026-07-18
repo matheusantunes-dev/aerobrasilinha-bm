@@ -60,6 +60,17 @@
   font-size: 0.85rem;
 }
 
+.footer-admin-link {
+  opacity: 0.4;
+  font-size: 0.8rem;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-admin-link:hover {
+  opacity: 0.8;
+  color: var(--gray-300) !important;
+}
+
 @media (max-width: 768px) {
   .footer-container {
     grid-template-columns: 1fr;

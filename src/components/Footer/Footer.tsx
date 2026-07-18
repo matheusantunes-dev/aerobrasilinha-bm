@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MapPin } from 'lucide-react'
+import { MapPin, Shield } from 'lucide-react'
 import './Footer.css'
 
 export function Footer() {
@@ -32,6 +32,9 @@ export function Footer() {
             <a href="https://www.google.com/maps/place/Pista+de+Aeromodelismo+AEROBRASILINHA/" target="_blank" rel="noopener noreferrer">
               <MapPin size={16} /> Google Maps
             </a>
+            <Link to="/admin" className="footer-admin-link">
+              <Shield size={14} /> Área Admin
+            </Link>
           </div>
         </div>
       </div>
