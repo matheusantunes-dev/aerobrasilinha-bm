@@ -34,6 +34,7 @@ export function useMessages() {
       body: { name, email, message },
     })
     if (fnError) console.error('Email notification failed:', fnError)
+
     return null
   }
 
