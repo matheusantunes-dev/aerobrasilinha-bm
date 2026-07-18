@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { Hero } from '../../components/Hero/Hero'
+import { SEO } from '../../components/SEO/SEO'
 import { EventCard, sortEvents, getEventStatus } from '../../components/EventCard/EventCard'
 import { useEvents } from '../../hooks/useEvents'
+import { HardHat, MapPin } from 'lucide-react'
 import { LoadingGrid } from '../../components/Loading/Loading'
 import './Home.css'
 
@@ -13,27 +15,28 @@ export function Home() {
 
   return (
     <>
+      <SEO />
       <Hero />
 
       <section id="sobre" className="section about-section">
         <div className="container">
           <h2 className="section-title">Sobre o Clube</h2>
           <p className="section-subtitle">
-            Um novo clube de aeromodelismo nascendo com muita energia
+            Um movimento que só cresce no aeromodelismo mineiro
           </p>
 
           <div className="about-content">
             <div className="about-card glass-card">
               <h3>Quem Somos</h3>
               <p>
-                O Aerobrasilinha é um clube de aeromodelismo recém-nascido, idealizado por apaixonados
-                pela aviação em miniatura. Estamos construindo nossa estrutura na pista de aeromodelismo
-                e convidamos todos os entusiastas a fazerem parte dessa história desde o início.
+                O Aerobrasilinha é um clube de aeromodelismo em plena atividade, idealizado por entusiastas
+                da aviação em miniatura. Estamos estruturando nossa pista e convidamos todos os pilotos
+                a fazerem parte dessa história.
               </p>
             </div>
 
             <div className="about-card glass-card">
-              <h3>🚧 Em Construção</h3>
+              <h3><HardHat size={20} /> Estrutura em Desenvolvimento</h3>
               <p>
                 Nossa pista e sede estão em fase de desenvolvimento. Estamos trabalhando para oferecer
                 a melhor estrutura para nossos membros. Acompanhe nosso progresso e venha voar conosco!
@@ -41,7 +44,7 @@ export function Home() {
             </div>
 
             <div className="about-card glass-card">
-              <h3>📍 Voo no Aeroporto Regional</h3>
+              <h3><MapPin size={20} /> Voo no Aeroporto Regional</h3>
               <p>
                 Além da nossa pista, voos também podem ser realizados no Aeroporto Regional de Brasília
                 de Minas. Consulte sempre o endereço dos eventos para não haver mal-entendidos.
@@ -58,7 +61,7 @@ export function Home() {
         <div className="container">
           <h2 className="section-title">Próximos Eventos</h2>
           <p className="section-subtitle">
-            Fique por dentro das nossas revoadas e encontros
+            Confira as revoadas e encontros programados
           </p>
 
           {loading ? (
@@ -72,7 +75,7 @@ export function Home() {
           ) : (
             <div className="events-empty">
               <p>Nenhum evento agendado no momento.</p>
-              <p>Fique ligado nas redes sociais para novidades!</p>
+              <p>Acompanhe o clube para saber dos próximos encontros!</p>
             </div>
           )}
 
@@ -89,7 +92,7 @@ export function Home() {
           <div className="cta-content glass-card">
             <h2 className="cta-title">Quer fazer parte?</h2>
             <p className="cta-text">
-              Entre em contato e venha conhecer o Aerobrasilinha. Todos são bem-vindos!
+              Entre em contato e venha conhecer o Aerobrasilinha. Todos os pilotos são bem-vindos!
             </p>
             <a
               href="https://www.youtube.com/@aerobrasilinhabr"

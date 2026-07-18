@@ -35,7 +35,7 @@ export const videos: VideoItem[] = [
   },
   {
     id: 'div-3',
-    title: 'Vôozinho da tarde',
+    title: 'Voo da tarde',
     url: 'https://youtu.be/WrgZVGvMg_Y',
     type: 'video',
   },

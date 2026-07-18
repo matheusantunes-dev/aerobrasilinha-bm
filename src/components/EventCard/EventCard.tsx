@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin } from 'lucide-react'
+import { Calendar, Clock, MapPin, Flame, CheckCircle, AlarmClockCheck, CalendarCheck, Plane } from 'lucide-react'
 import type { Event } from '../../types'
 import './EventCard.css'
 
@@ -15,7 +15,7 @@ function formatDate(dateStr: string) {
   })
 }
 
-export function getEventStatus(dateStr: string): { label: string; className: string } {
+export function getEventStatus(dateStr: string): { label: string; className: string; icon: React.ReactNode } {
   const today = new Date()
   today.setHours(0, 0, 0, 0)
   const eventDate = new Date(dateStr + 'T12:00:00')
@@ -23,13 +23,13 @@ export function getEventStatus(dateStr: string): { label: string; className: str
   const diffMs = eventDate.getTime() - today.getTime()
 
   if (diffMs < 0) {
-    if (diffDays === -1) return { label: '✅ Voo Realizado Ontem', className: 'badge-passado' }
-    return { label: '✅ Voo Realizado', className: 'badge-passado' }
+    if (diffDays === -1) return { label: 'Voo Realizado Ontem', className: 'badge-passado', icon: <CheckCircle size={14} /> }
+    return { label: 'Voo Realizado', className: 'badge-passado', icon: <CheckCircle size={14} /> }
   }
-  if (diffDays === 0) return { label: '🔥 É HOJE!', className: 'badge-hoje' }
-  if (diffDays === 1) return { label: '⏰ Véspera de Voo', className: 'badge-amanha' }
-  if (diffDays <= 7) return { label: '📅 Em Breve', className: 'badge-semana' }
-  return { label: '✈️ Próximo Voo', className: 'badge-futuro' }
+  if (diffDays === 0) return { label: 'Hoje!', className: 'badge-hoje', icon: <Flame size={14} /> }
+  if (diffDays === 1) return { label: 'Amanhã', className: 'badge-amanha', icon: <AlarmClockCheck size={14} /> }
+  if (diffDays <= 7) return { label: 'Esta Semana', className: 'badge-semana', icon: <CalendarCheck size={14} /> }
+  return { label: 'Próximo Voo', className: 'badge-futuro', icon: <Plane size={14} /> }
 }
 
 export function isEventExpired(dateStr: string): boolean {
@@ -75,7 +75,10 @@ export function EventCard({ event }: EventCardProps) {
       <div className="event-card-body">
         <div className="event-card-title-row">
           <h3 className="event-card-title">{event.title}</h3>
-          <span className={`event-status-badge ${status.className}`}>{status.label}</span>
+          <span className={`event-status-badge ${status.className}`}>
+            {status.icon}
+            {status.label}
+          </span>
         </div>
         <p className="event-card-description">{event.description}</p>
         <div className="event-card-details">

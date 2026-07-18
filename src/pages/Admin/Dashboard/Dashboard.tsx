@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
-import { LogOut, Plus, Edit3, Image } from 'lucide-react'
+import { LogOut, Plus, Edit3, Image, MessageSquare } from 'lucide-react'
 import './Dashboard.css'
 
 export function Dashboard() {
@@ -43,6 +43,12 @@ export function Dashboard() {
             <Image size={32} className="card-icon" />
             <h3>Gerenciar Galeria</h3>
             <p>Adicione, edite legendas ou remova fotos</p>
+          </Link>
+
+          <Link to="/admin/mensagens" className="dashboard-card glass-card">
+            <MessageSquare size={32} className="card-icon" />
+            <h3>Mensagens</h3>
+            <p>Visualize mensagens recebidas do ChatBot</p>
           </Link>
         </div>
       </div>

@@ -2,21 +2,20 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding: 0;
 }
 
 .event-card-image-wrapper {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  border-radius: 12px 12px 0 0;
-  margin: -24px -24px 0;
 }
 
 .event-card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  transition: transform var(--transition-normal);
 }
 
 .event-card:hover .event-card-image {
@@ -24,11 +23,11 @@
 }
 
 .event-card-body {
-  flex: 1;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding-top: 16px;
+  flex: 1;
 }
 
 .event-card-title-row {
@@ -39,14 +38,67 @@
 }
 
 .event-card-title {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--white);
+  line-height: 1.4;
+}
+
+.event-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-hoje {
+  background: rgba(255, 107, 0, 0.2);
+  color: var(--orange-400);
+  border: 1px solid var(--orange-500);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.badge-amanha {
+  background: rgba(255, 160, 51, 0.15);
+  color: var(--orange-300);
+  border: 1px solid var(--orange-400);
+}
+
+.badge-semana {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gray-100);
+  border: 1px solid var(--gray-500);
+}
+
+.badge-futuro {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gray-300);
+  border: 1px solid var(--gray-500);
+}
+
+.badge-passado {
+  background: rgba(68, 187, 102, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(68, 187, 102, 0.3);
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 4px var(--orange-glow);
+  }
+  50% {
+    box-shadow: 0 0 14px var(--orange-glow);
+  }
 }
 
 .event-card-description {
+  color: var(--gray-300);
   font-size: 0.9rem;
-  color: var(--gray-200);
   line-height: 1.6;
   flex: 1;
 }
@@ -63,22 +115,19 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--gray-400);
   font-size: 0.85rem;
-  color: var(--gray-300);
 }
 
 .event-card-detail svg {
-  color: var(--orange-400);
   flex-shrink: 0;
 }
 
 .event-card-map-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  display: inline-block;
+  color: var(--orange-400);
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--orange-400);
   margin-top: 4px;
 }
 
@@ -86,65 +135,16 @@
   color: var(--orange-300);
 }
 
-/* Status badge base */
-.event-status-badge {
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  animation: fadeIn 0.3s ease;
+.event-expired {
+  opacity: 0.55;
 }
 
-/* É HOJE! — pulsar laranja */
-.event-card.badge-hoje {
-  border-color: var(--orange-500);
-  box-shadow: 0 0 20px var(--orange-glow);
-  animation: glowPulse 2s ease infinite;
+.event-expired:hover {
+  opacity: 0.75;
 }
 
-.event-status-badge.badge-hoje {
-  background: var(--orange-500);
-  color: var(--white);
-}
-
-/* Véspera de Voo */
-.event-status-badge.badge-amanha {
-  background: rgba(255, 107, 0, 0.2);
-  color: var(--orange-400);
-}
-
-/* Em Breve */
-.event-status-badge.badge-semana {
-  background: rgba(68, 136, 255, 0.15);
-  color: #4488FF;
-}
-
-/* Passado */
-.event-card.event-expired {
-  opacity: 0.6;
-}
-
-.event-status-badge.badge-passado {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--gray-400);
-}
-
-/* Próximo Voo */
-.event-status-badge.badge-futuro {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--gray-200);
-}
-
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 107, 0, 0.6);
+@media (max-width: 768px) {
+  .event-card-title-row {
+    flex-direction: column;
   }
 }

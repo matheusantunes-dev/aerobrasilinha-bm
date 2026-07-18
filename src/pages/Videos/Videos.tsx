@@ -1,55 +1,34 @@
 import { videos } from '../../data/videos'
 import { VideoCard } from '../../components/VideoCard/VideoCard'
+import { SEO } from '../../components/SEO/SEO'
 import './Videos.css'
 
-const pistaIds = ['pista-1', 'pista-2']
-
 export function Videos() {
-  const pistaVideos = videos.filter(v => pistaIds.includes(v.id))
-  const outrosVideos = videos.filter(v => !pistaIds.includes(v.id))
+  const pistaVideos = videos.filter(v => v.id.startsWith('pista'))
+  const outrosVideos = videos.filter(v => v.id.startsWith('div'))
 
   return (
     <div className="videos-page section">
       <div className="container">
+        <SEO title="Vídeos" description="Vídeos de voos, revoadas e aeromodelismo do Aerobrasilinha em Brasília de Minas - MG." />
         <h1 className="section-title">Vídeos</h1>
         <p className="section-subtitle">
-          Vídeos e shorts do nosso canal no YouTube
+          Registros em vídeo do Aerobrasilinha
         </p>
 
-        {pistaVideos.length > 0 && (
-          <>
-            <h2 className="videos-subtitle">Voo na Pista</h2>
-            <div className="videos-grid">
-              {pistaVideos.map(video => (
-                <VideoCard key={video.id} video={video} />
-              ))}
-            </div>
-          </>
-        )}
+        <h2 className="videos-subtitle">Voo na Pista</h2>
+        <div className="videos-grid">
+          {pistaVideos.map(video => (
+            <VideoCard key={video.id} video={video} />
+          ))}
+        </div>
 
-        {outrosVideos.length > 0 && (
-          <>
-            <h2 className="videos-subtitle">Outros Vôos do Clube!</h2>
-            <div className="videos-grid">
-              {outrosVideos.map(video => (
-                <VideoCard key={video.id} video={video} />
-              ))}
-            </div>
-          </>
-        )}
-
-        {videos.length === 0 && (
-          <div className="videos-empty">
-            <p>Nenhum vídeo adicionado ainda.</p>
-            <p>
-              Enquanto isso, visite nosso{' '}
-              <a href="https://www.youtube.com/@aerobrasilinhabr" target="_blank" rel="noopener noreferrer">
-                canal no YouTube
-              </a>
-              !
-            </p>
-          </div>
-        )}
+        <h2 className="videos-subtitle">Outros Vôos do Clube</h2>
+        <div className="videos-grid">
+          {outrosVideos.map(video => (
+            <VideoCard key={video.id} video={video} />
+          ))}
+        </div>
       </div>
     </div>
   )

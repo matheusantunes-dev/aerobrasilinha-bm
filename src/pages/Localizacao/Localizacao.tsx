@@ -1,11 +1,13 @@
 import { MapView } from '../../components/MapView/MapView'
 import { AlertTriangle, MapPin, Plane } from 'lucide-react'
+import { SEO } from '../../components/SEO/SEO'
 import './Localizacao.css'
 
 export function Localizacao() {
   return (
     <div className="localizacao-page section">
       <div className="container">
+        <SEO title="Localização" description="Localização da pista de aeromodelismo Aerobrasilinha e Aeroporto Regional de Brasília de Minas - MG." />
         <h1 className="section-title">Localização</h1>
         <p className="section-subtitle">
           Onde estamos e onde voamos
@@ -16,7 +18,7 @@ export function Localizacao() {
           <div className="alert-content">
             <h3>Aviso Importante</h3>
             <p>
-              Nossa pista e sede estão <strong>em construção</strong> — somos um clube recém-nascido!
+              Nossa pista e sede estão <strong>em fase de estruturação</strong>.
               Verifique sempre o endereço dos eventos para não haver mal-entendidos.
               Alguns eventos podem ocorrer em locais diferentes.
             </p>

@@ -3,6 +3,7 @@ import { useGallery } from '../../hooks/useGallery'
 import { PhotoCard } from '../../components/PhotoCard/PhotoCard'
 import { ImageModal } from '../../components/ImageModal/ImageModal'
 import { LoadingGrid } from '../../components/Loading/Loading'
+import { SEO } from '../../components/SEO/SEO'
 import './Galeria.css'
 
 export function Galeria() {
@@ -14,6 +15,7 @@ export function Galeria() {
   return (
     <div className="galeria-page section">
       <div className="container">
+        <SEO title="Galeria de Fotos" description="Fotos e registros do Aerobrasilinha, clube de aeromodelismo em Brasília de Minas - MG." />
         <h1 className="section-title">Galeria de Fotos</h1>
         <p className="section-subtitle">
           Momentos e registros do Aerobrasilinha

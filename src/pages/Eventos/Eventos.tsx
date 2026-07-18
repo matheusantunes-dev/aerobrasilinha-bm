@@ -1,6 +1,8 @@
 import { useEvents } from '../../hooks/useEvents'
 import { EventCard, sortEvents, isEventExpired, getEventStatus } from '../../components/EventCard/EventCard'
 import { LoadingGrid } from '../../components/Loading/Loading'
+import { SEO } from '../../components/SEO/SEO'
+import { Flame } from 'lucide-react'
 import './Eventos.css'
 
 export function Eventos() {
@@ -18,9 +20,10 @@ export function Eventos() {
   return (
     <div className="eventos-page section">
       <div className="container">
+        <SEO title="Eventos" description="Confira as revoadas e encontros de aeromodelismo do Aerobrasilinha em Brasília de Minas - MG." />
         <h1 className="section-title">Eventos</h1>
         <p className="section-subtitle">
-          Confira nossas revoadas e encontros de aeromodelismo
+          Confira as revoadas e encontros de aeromodelismo
         </p>
 
         {loading ? (
@@ -29,7 +32,10 @@ export function Eventos() {
           <>
             {hoje.length > 0 && (
               <>
-                <h2 className="eventos-subtitle hoje-subtitle">🔥 Voos de Hoje</h2>
+                <h2 className="eventos-subtitle hoje-subtitle">
+                  <Flame size={18} />
+                  Voos de Hoje
+                </h2>
                 <div className="eventos-grid">
                   {hoje.map(event => (
                     <EventCard key={event.id} event={event} />

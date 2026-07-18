@@ -19,8 +19,7 @@ export function Hero() {
         <h1 className="hero-title">AEROBRASILINHA</h1>
         <p className="hero-subtitle">Clube de Aeromodelismo em Brasília de Minas - MG</p>
         <p className="hero-description">
-          Um clube recém-nascido com a missão de unir apaixonados por aeromodelismo.
-          Voamos juntos!
+          Um clube em atividade desde 2025, reunindo pilotos e entusiastas do aeromodelismo em Brasília de Minas.
         </p>
         <div className="hero-actions">
           <a href="#sobre" className="btn-primary">Conheça o Clube</a>
