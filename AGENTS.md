@@ -1,4 +1,4 @@
-# AGENTS.md - Aerobrasilinha Site
+# AGENTS.md - Aerobrasilinha BM
 
 ## Project
 React + TypeScript + Vite + Supabase

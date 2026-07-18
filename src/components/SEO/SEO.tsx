@@ -7,7 +7,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = 'Aerobrasilinha'
-const BASE_URL = 'https://aerobrasilinha.vercel.app'
+const BASE_URL = 'https://aerobrasilinha-bm.vercel.app'
 const DEFAULT_DESC = 'Clube de Aeromodelismo em Brasília de Minas - MG. Eventos, galeria, vídeos e localização para entusiastas do aeromodelismo.'
 const OG_IMAGE = 'https://aloqvzxsdhphfbkpwctw.supabase.co/storage/v1/object/public/images/logo/channels4_profile%20(1).jpg'
 
